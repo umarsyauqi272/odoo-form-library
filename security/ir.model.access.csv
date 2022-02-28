@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_library_management_library_management,library_management.library_management,model_library_management_library_management,base.group_user,1,1,1,1
+access_library_management_buku,library_management.buku,model_library_management_buku,base.group_user,1,1,1,1
+access_library_management_member,library_management.member,model_library_management_member,base.group_user,1,1,1,1
+access_library_management_peminjaman,library_management.peminjaman,model_library_management_peminjaman,base.group_user,1,1,1,1

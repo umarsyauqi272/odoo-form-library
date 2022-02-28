@@ -1,0 +1,89 @@
+<odoo>
+	<data>
+		<record id="library_management.member_view" model="ir.ui.view">
+			<field name="name">
+				biodata_pasien_view_form
+			</field>
+			<field name="model">
+				biodata.pasien
+			</field>
+			<field name="arch" type="xml">
+				<form>
+					<sheet>
+						<group>
+							<group>
+								<field name="nomor_pasien" />
+								<field name="name" />
+								<field name="no_NRP" />
+								<field name="jenis_kelamin" />
+								<field name="tempat_lahir" />
+								<field name="tgl_lahir" />
+								<field name="perusahaan_id" />
+							</group>
+							<group>
+								<field name="golongan_darah" />
+								<field name="agama" />
+								<field name="alamat" />
+								<field name="no_hp" />
+								<field name="email" />
+								<field name="partner_id" />
+							</group>
+						</group>
+						<notebook>
+							<page string="Rekam Medik" name="Rekam Medik">
+								<group>
+									<field name="riwayat_penyakit" />
+									<field name="pengobatan_berjalan" />
+									<field name="rekam_medik_ids" />
+								</group>
+							</page>
+							<page string="Asuransi Pasien" name="Asuransi">
+								<field name="asuransi_ids" widget="one2many_widget">
+									<tree string="Asuransi" editable="bottom">
+										<field name="name" />
+										<field name="nomor_asuransi" />
+									</tree>
+								</field>
+							</page>
+							<page string="Tempat kerja" name="Tempat Kerja">
+								<group>
+									<field name="tempat_kerja_ids" />
+								</group>
+							</page>
+						</notebook>
+					</sheet>
+				</form>
+			</field>
+		</record>
+		<record id="biodata_pasien_view_tree" model="ir.ui.view">
+			<field name="name">
+				biodata_pasien_view_tree
+			</field>
+			<field name="model">
+				biodata.pasien
+			</field>
+			<field name="arch" type="xml">
+				<tree>
+					<field name="nomor_pasien" />
+					<field name="name" />
+					<field name="jenis_kelamin" />
+					<field name="tempat_kerja_ids" />
+				</tree>
+			</field>
+		</record>
+		<record model="ir.actions.act_window" id="biodata_pasien_action">
+			<field name="name">
+				Biodata Pasien
+			</field>
+			<field name="res_model">
+				biodata.pasien
+			</field>
+			<field name="view_mode">
+				tree,form
+			</field>
+		</record>
+		<menuitem id="biodata_pasien_menu_root" name="GSI Poliklinik" web_icon="gsi_poliklinik,static/description/icon_poli.png" />
+		<menuitem id="biodata_pasien_menu" name="Pasien" parent="biodata_pasien_menu_root" action="biodata_pasien_action" sequence="0" />
+		<menuitem id="biodata_pasien_menu_management" name="Biodata Pasien" parent="biodata_pasien_menu" action="biodata_pasien_action" sequence="1" />
+	</data>
+</odoo>

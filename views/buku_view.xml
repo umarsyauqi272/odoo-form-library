@@ -1,0 +1,15 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="library_management.list">
+            <field name="name">library management list</field>
+            <field name="model">library_management.library_management</field>
+            <field name="arch" type="xml">
+              <tree>
+                <field name="name"/>
+                <field name="value"/>
+                <field name="value2"/>
+              </tree>
+            </field>
+          </record>
+    </data>
+</odoo>
